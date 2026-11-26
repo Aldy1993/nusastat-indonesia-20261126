@@ -1,0 +1,166 @@
+/* NusaStat — Indonesia in Numbers.
+   Paper-warm background, deep teal ink, amber accent. System type only:
+   Georgia for display, system sans for data — nothing loads over the network. */
+
+:root {
+  --paper: #f7f5f0;
+  --card: #fffdf8;
+  --ink: #14201f;
+  --teal: #0e4f4a;
+  --teal-soft: #3a7d7a;
+  --amber: #e8a317;
+  --amber-deep: #b97f0a;
+  --rust: #b4452f;
+  --line: #e3ddd0;
+  --muted: #6b7280;
+  --body: #374151;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; color: var(--ink); line-height: 1.15; }
+h1 { font-size: 2.4rem; margin: 0 0 0.4rem; }
+h2 { font-size: 1.35rem; margin: 0 0 0.25rem; }
+h3 { font-size: 1.1rem; }
+
+a { color: var(--teal); }
+a:hover { color: var(--amber-deep); }
+
+/* Top bar */
+.topbar {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1.5rem;
+  background: var(--teal); color: #fff; padding: 0.7rem 1.25rem;
+  position: sticky; top: 0; z-index: 10;
+  box-shadow: 0 2px 10px rgba(20, 32, 31, 0.25);
+}
+.brand { color: #fff; text-decoration: none; font-family: Georgia, serif; font-size: 1.3rem; font-weight: 700; display: flex; align-items: baseline; gap: 0.5rem; }
+.brand:hover { color: #fff; }
+.brand-mark {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 1.7rem; height: 1.7rem; border-radius: 0.4rem;
+  background: var(--amber); color: var(--ink); font-size: 1.05rem; transform: translateY(0.15rem);
+}
+.brand-sub { font-family: -apple-system, sans-serif; font-size: 0.8rem; font-weight: 400; color: #cfe3de; }
+.topbar nav { display: flex; flex-wrap: wrap; gap: 0.15rem; margin-left: auto; }
+.topbar nav a {
+  color: #dcebe8; text-decoration: none; padding: 0.4rem 0.7rem; border-radius: 0.4rem; font-size: 0.95rem;
+}
+.topbar nav a:hover { background: rgba(255, 255, 255, 0.12); color: #fff; }
+.topbar nav a.active { background: var(--amber); color: var(--ink); font-weight: 700; }
+
+main { max-width: 1080px; margin: 0 auto; padding: 1.1rem 1.25rem 2.5rem; }
+
+/* Hero */
+.hero { padding: 0.7rem 0 1.1rem; border-bottom: 3px solid var(--teal); margin-bottom: 1.1rem; }
+.eyebrow { color: var(--amber-deep); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.8rem; margin: 0 0 0.5rem; }
+.hero h1 { font-size: 2.35rem; margin: 0 0 0.4rem; }
+.lede { font-size: 1.05rem; color: var(--body); max-width: 46rem; margin: 0 0 0.8rem; }
+.hero-links { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 0; }
+
+.page-head { padding: 0.6rem 0 1.2rem; border-bottom: 3px solid var(--teal); margin-bottom: 1.5rem; }
+
+.btn {
+  display: inline-block; background: var(--teal); color: #fff; border: none; border-radius: 0.45rem;
+  padding: 0.6rem 1.1rem; font-size: 0.95rem; font-weight: 700; text-decoration: none; cursor: pointer;
+}
+.btn:hover { background: #0a3d39; color: #fff; }
+.btn-ghost { background: transparent; color: var(--teal); box-shadow: inset 0 0 0 2px var(--teal); }
+.btn-ghost:hover { background: #e6efed; color: var(--teal); }
+
+/* KPI cards */
+.kpi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.1rem; }
+.kpi {
+  background: var(--card); border: 1px solid var(--line); border-top: 4px solid var(--amber);
+  border-radius: 0.6rem; padding: 0.75rem 1rem;
+}
+.kpi-value { font-family: Georgia, serif; font-size: 1.75rem; font-weight: 700; color: var(--teal); line-height: 1.1; }
+.kpi-label { font-weight: 700; margin-top: 0.2rem; }
+.kpi-note { font-size: 0.85rem; color: var(--muted); margin-top: 0.15rem; }
+
+/* Cards & grids */
+.card {
+  background: var(--card); border: 1px solid var(--line); border-radius: 0.6rem;
+  padding: 1.25rem 1.35rem; margin-bottom: 1.5rem;
+}
+.card-sub { color: var(--muted); margin: 0 0 1rem; font-size: 0.95rem; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+.grid-2 .card { margin-bottom: 1.25rem; }
+.chart { width: 100%; }
+.chart svg { display: block; }
+.ctl { font-size: 0.9rem; color: var(--body); margin: 0 0.9rem 0.8rem 0; display: inline-block; }
+.ctl select, .ctl input {
+  font: inherit; padding: 0.35rem 0.5rem; border: 1px solid #c9c2b4; border-radius: 0.4rem; background: #fff; color: var(--ink);
+}
+
+/* Tables */
+.table-wrap { overflow-x: auto; }
+.data-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+.data-table th, .data-table td { padding: 0.55rem 0.7rem; border-bottom: 1px solid var(--line); text-align: left; }
+.data-table th { background: #efece4; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.data-table .num { text-align: right; font-variant-numeric: tabular-nums; }
+.data-table tbody tr:hover { background: #faf7ef; }
+.sortable th[data-k] { cursor: pointer; }
+.sortable th[data-k]:hover { background: #e7e0d1; }
+.sortable tbody tr[data-name] { cursor: pointer; }
+
+/* Releases, legend, sources */
+.releases { list-style: none; margin: 0; padding: 0; }
+.releases li { display: grid; grid-template-columns: 6.5rem 1fr; gap: 0.25rem 1rem; padding: 0.7rem 0; border-bottom: 1px solid var(--line); }
+.releases li:last-child { border-bottom: none; }
+.rel-date { font-weight: 700; color: var(--amber-deep); font-size: 0.9rem; }
+.releases li strong { display: block; }
+.releases li span:last-child { color: var(--body); grid-column: 2; }
+.legend { list-style: none; margin: 0.9rem 0 0; padding: 0; columns: 2; column-gap: 1.5rem; }
+.legend li { display: flex; align-items: center; gap: 0.5rem; padding: 0.2rem 0; font-size: 0.9rem; break-inside: avoid; }
+.legend strong { margin-left: auto; }
+.swatch { width: 0.85rem; height: 0.85rem; border-radius: 0.2rem; flex: none; }
+.donut-wrap { max-width: 280px; margin: 0 auto; }
+.sources { list-style: none; margin: 0 0 1.5rem; padding: 0; }
+.sources li { padding: 0.6rem 0; border-bottom: 1px solid var(--line); }
+.sources li span { display: block; color: var(--muted); font-size: 0.9rem; }
+.source { color: var(--muted); font-size: 0.85rem; margin: 0.8rem 0 0; }
+
+/* Regions */
+.region-controls { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; margin-bottom: 1rem; }
+.region-controls .ctl { margin-bottom: 0; }
+.detail { background: #eef4f2; border: 1px solid var(--teal-soft); border-radius: 0.6rem; padding: 1.1rem 1.25rem; margin-top: 1.1rem; }
+.detail h3 { margin-top: 0; }
+.detail-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin: 0.8rem 0; }
+.detail-grid div { background: #fff; border-radius: 0.45rem; padding: 0.6rem 0.75rem; }
+.detail-grid strong { display: block; font-size: 1.2rem; color: var(--teal); }
+.detail-grid span { font-size: 0.85rem; color: var(--muted); }
+
+/* Downloads */
+.dl-grid { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.dl-btn { font-size: 0.9rem; padding: 0.5rem 0.9rem; }
+
+/* Footer */
+footer { max-width: 1080px; margin: 0 auto; padding: 0 1.25rem 2rem; color: var(--muted); font-size: 0.9rem; }
+footer .fine { font-size: 0.8rem; }
+
+/* Phone layout */
+@media (max-width: 720px) {
+  body { font-size: 15px; }
+  h1, .hero h1 { font-size: 1.9rem; }
+  .topbar { padding: 0.6rem 0.8rem; }
+  .brand-sub { display: none; }
+  .topbar nav { margin-left: 0; }
+  .topbar nav a { padding: 0.35rem 0.5rem; font-size: 0.88rem; }
+  main { padding: 1rem 0.9rem 2rem; }
+  .kpi-grid { grid-template-columns: 1fr 1fr; }
+  .kpi-value { font-size: 1.55rem; }
+  .grid-2 { grid-template-columns: 1fr; }
+  .releases li { grid-template-columns: 1fr; }
+  .releases li span:last-child { grid-column: 1; }
+  .legend { columns: 1; }
+  .detail-grid { grid-template-columns: 1fr 1fr; }
+}
